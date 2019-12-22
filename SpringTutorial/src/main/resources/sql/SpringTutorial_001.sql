@@ -1,0 +1,22 @@
+
+
+SELECT 
+      EMPLOYEE_ID
+    , FIRST_NAME
+    , LAST_NAME
+    , EMAIL
+    , PHONE_NUMBER
+    , HIRE_DATE
+    , JOB_ID
+    , SALARY
+    , COMMISSION_PCT
+    , MANAGER_ID
+    , DEPARTMENT_ID 
+FROM 
+    EMPLOYEES 
+WHERE 
+    ROWNUM >= 0
+AND 
+    ROWNUM <= 10
+ORDER BY 
+    EMPLOYEE_ID ASC 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test">
+
+	<select id="getEmployeesList" parameterType="java.util.Map" resultType="com.spring.tutorial.test.dto.EmployeesDTO">
+		SELECT 
+			  EMPLOYEE_ID
+			, FIRST_NAME
+			, LAST_NAME
+			, EMAIL
+			, PHONE_NUMBER
+			, HIRE_DATE
+			, JOB_ID
+			, SALARY
+			, COMMISSION_PCT
+			, MANAGER_ID
+			, DEPARTMENT_ID 
+		FROM 
+			EMPLOYEES 
+		WHERE 
+			<![CDATA[ ROWNUM >= #{start} ]]> 
+		AND 
+			<![CDATA[ ROWNUM <= #{end} ]]> 
+		ORDER BY 
+			EMPLOYEE_ID ASC 
+	</select>
+	
+</mapper>
