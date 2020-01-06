@@ -1,4 +1,4 @@
-package com.spring.tutorial.test.serverice;
+package com.spring.tutorial.employees.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,14 +7,14 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spring.tutorial.test.dao.TestDAO;
-import com.spring.tutorial.test.dto.EmployeesDTO;
+import com.spring.tutorial.employees.dao.EmployeesDAO;
+import com.spring.tutorial.employees.dto.EmployeesDTO;
 
 @Service
-public class TestServiceImpl implements TestService {
+public class EmployeesServiceImpl implements EmployeesService {
 
 	@Autowired
-	private TestDAO testDAOImpl;
+	private EmployeesDAO employeesDAOImpl;
 
 	@Override
 	public List< EmployeesDTO > getEmployeesList( Integer page ) {
@@ -27,13 +27,13 @@ public class TestServiceImpl implements TestService {
 		Map< String, Object > paramMap = new HashMap< String, Object >();
 		paramMap.put( "start", page );
 		paramMap.put( "end", ( page + 10 ) );
-		
-		List< EmployeesDTO > employeesList = testDAOImpl.getEmployeesList( paramMap );
-		
+
+		List< EmployeesDTO > employeesList = employeesDAOImpl.getEmployeesList( paramMap );
+
 		StringBuffer sb = new StringBuffer();
 		int index01 = 0;
-		for( index01 = 0 ; index01 < employeesList.size(); index01++ ) {
-			
+		for( index01 = 0; index01 < employeesList.size(); index01++ ) {
+
 			sb.append( "\n==================================================\n" );
 			sb.append( "EMPLOYEE_ID : " );
 			sb.append( employeesList.get( index01 ).getEmployeeId() );
@@ -48,7 +48,7 @@ public class TestServiceImpl implements TestService {
 
 		System.out.println( sb.toString() );
 
-		return testDAOImpl.getEmployeesList( paramMap );
+		return employeesDAOImpl.getEmployeesList( paramMap );
 	}
 
 }

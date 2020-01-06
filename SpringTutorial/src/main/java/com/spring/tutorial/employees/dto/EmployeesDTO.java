@@ -1,20 +1,20 @@
-package com.spring.tutorial.test.dto;
+package com.spring.tutorial.employees.dto;
 
 import java.util.Date;
 
 public class EmployeesDTO {
 
-	int employeeId; /* NUMBER(6,0) 			NOT NULL */ /* Primary key of employees table. */
-	String firstName; /* VARCHAR2(20 BYTE) 	NULLABLE */ /* First name of the employee. A not null column. */
-	String lastName; /* VARCHAR2(25 BYTE)	NOT NULL */ /* Last name of the employee. A not null column. */
-	String email; /* VARCHAR2(25 BYTE)	NOT NULL */ /* Email id of the employee */
-	String phoneNumber; /* VARCHAR2(20 BYTE)	NULLABLE */ /* Phone number of the employee; includes country code and area code */
-	Date hireDate; /* DATE					NOT NULL */ /* Date when the employee started on this job. A not null column. */
-	String jobId; /* VARCHAR2(10 BYTE)	NOT NULL */ /* "Current job of the employee; foreign key to job_id column of the jobs table. A not null column." */
-	Double salary; /* NUMBER(8,2)			NULLABLE */ /* "Monthly salary of the employee. Must be greater than zero (enforced by constraint emp_salary_min)" */
-	Double commissionPct; /* NUMBER(2,2)			NULLABLE */ /* "Commission percentage of the employee; Only employees in sales department elgible for commission percentage" */
-	Integer managerId; /* NUMBER(6,0)			NULLABLE */ /* "Manager id of the employee; has same domain as manager_id in departments table. Foreign key to employee_id column of employees table. (useful for reflexive joins and CONNECT BY query)" */
-	Integer departmentId; /* NUMBER(4,0)			NULLABLE */ /* "Department id where employee works; foreign key to department_id column of the departments table" */
+	int employeeId; 		/* NUMBER(6,0) 			NOT NULL */ /* Primary key of employees table. */
+	String firstName; 		/* VARCHAR2(20 BYTE) 	NULLABLE */ /* First name of the employee. A not null column. */
+	String lastName; 		/* VARCHAR2(25 BYTE)	NOT NULL */ /* Last name of the employee. A not null column. */
+	String email; 			/* VARCHAR2(25 BYTE)	NOT NULL */ /* Email id of the employee */
+	String phoneNumber; 	/* VARCHAR2(20 BYTE)	NULLABLE */ /* Phone number of the employee; includes country code and area code */
+	Date hireDate; 			/* DATE					NOT NULL */ /* Date when the employee started on this job. A not null column. */
+	String jobId; 			/* VARCHAR2(10 BYTE)	NOT NULL */ /* "Current job of the employee; foreign key to job_id column of the jobs table. A not null column." */
+	Double salary; 			/* NUMBER(8,2)			NULLABLE */ /* "Monthly salary of the employee. Must be greater than zero (enforced by constraint emp_salary_min)" */
+	Double commissionPct; 	/* NUMBER(2,2)			NULLABLE */ /* "Commission percentage of the employee; Only employees in sales department elgible for commission percentage" */
+	Integer managerId; 		/* NUMBER(6,0)			NULLABLE */ /* "Manager id of the employee; has same domain as manager_id in departments table. Foreign key to employee_id column of employees table. (useful for reflexive joins and CONNECT BY query)" */
+	Integer departmentId; 	/* NUMBER(4,0)			NULLABLE */ /* "Department id where employee works; foreign key to department_id column of the departments table" */
 
 	public int getEmployeeId() {
 		return employeeId;
